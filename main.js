@@ -2,11 +2,16 @@ var readline = require("readline-sync");
 var getDayOfTheWeek = require("./lab2").getDayOfTheWeek; 
 var makeCalendar = require("./lab2").makeCalendar;
 
-var year = readline.question("Enter a Year: "); 
-var month = readline.question("Enter a month: ");
-var day = readline.question("Enter a date: ");
 
-const dayOfWeek = getDayOfTheWeek(year, month, day);
-console.log(dayOfWeek);
+// remember to make a function of getDayOfTheWeekForUserDate()
 
-console.log(makeCalendar());
+function getDayOfTheWeekForUserDate() {
+    var year = readline.question("Enter a Year: "); 
+    var month = readline.question("Enter a month: ");
+    var day = readline.question("Enter a date: ");
+    console.log(getDayOfTheWeek(parseInt(year), month, parseInt(day)));
+};
+
+getDayOfTheWeekForUserDate();
+makeCalendar();
+
